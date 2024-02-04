@@ -163,7 +163,7 @@ router.delete('/user/:id',validarJwt, deleteUser);
  *         schema:
  *           type: string
  *         description: ID del usuario que se actualizará
-*       - in: header
+ *       - in: header
  *         name: x-token
  *         required: true
  *         description: Token de autenticación
