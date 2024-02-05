@@ -116,7 +116,7 @@ router.post('/register', [
 
 /**
  * @swagger
- * /user/{id}:
+ * /user/{idUser}:
  *   delete:
  *     summary: Elimina un usuario
  *     tags: [Users]
@@ -152,7 +152,7 @@ router.delete('/user/:id',validarJwt, deleteUser);
 
 /**
  * @swagger
- * /user/{id}:
+ * /user/{idUser}:
  *   put:
  *     summary: Actualiza el nombre de un usuario
  *     tags: [Users]

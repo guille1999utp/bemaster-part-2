@@ -152,7 +152,7 @@ router.post('/video/create', [
 
 /**
  * @swagger
- * /video/like/{id}:
+ * /video/like/{idVideo}:
  *   post:
  *     summary: Dar like a un video
  *     tags: [Videos]
@@ -190,7 +190,7 @@ router.post('/video/like/:id', [
 
 /**
  * @swagger
- * /video/comment/{id}:
+ * /video/comment/{idVideo}:
  *   post:
  *     summary: Comentar en un video
  *     tags: [Videos]
@@ -241,7 +241,7 @@ router.post('/video/comment/:id', [
 
 /**
  * @swagger
- * /video/{id}:
+ * /video/{idVideo}:
  *   delete:
  *     summary: Elimina un video
  *     tags: [Videos]
@@ -277,7 +277,7 @@ router.delete('/video/:id', validarJwt, deleteVideo);
 
 /**
  * @swagger
- * /video/{id}:
+ * /video/{idVideo}:
  *   put:
  *     summary: Actualiza la información de un video
  *     tags: [Videos]
@@ -435,7 +435,7 @@ router.get('/video/top-rate', videosTopRate);
 
 /**
  * @swagger
- * /video/{id}:
+ * /video/{idVideo}:
  *   get:
  *     summary: Obtiene toda la informacion del video por su id
  *     tags: [Videos]
