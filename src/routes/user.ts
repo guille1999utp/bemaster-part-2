@@ -1,4 +1,4 @@
-import {Router} from 'express';
+import {Router,Express} from 'express';
 import { check } from 'express-validator';
 import { validateFields } from '../middlewares/validate';
 import { login, register,deleteUser, updateUserName, getUserByNickname } from '../controllers/user';
@@ -108,8 +108,8 @@ router.post('/login', [
 router.post('/register', [
     check('nombre','El campo "nombre" es obligatorio').notEmpty(),
     check('nickname','El campo "nickname" es obligatorio').notEmpty(),
-    check('correo','El campo "correo" es obligatorio').notEmpty(),
     check('correo','El campo "correo" debe ser un correo').isEmail(),
+    check('correo','El campo "correo" es obligatorio').notEmpty(),
     check('password','El campo "password" es obligatorio').notEmpty(),
     validateFields
 ],register);
@@ -249,4 +249,4 @@ router.put('/user/:id', [
 router.get('/user/nickname/:nickname', getUserByNickname);
 
 
-export default router;
+export default (app:Express) =>app.use(router);

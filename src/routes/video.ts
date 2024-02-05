@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router,Express } from 'express';
 import { check } from 'express-validator';
 import { validateFields } from '../middlewares/validate';
 import {
@@ -145,6 +145,7 @@ router.post('/video/create', [
     check('titulo', 'El campo "titulo" es obligatorio').notEmpty(),
     check('descripcion', 'El campo "descripcion" es obligatorio').notEmpty(),
     check('public', 'El campo "public" es obligatorio').notEmpty(),
+    check('public', 'El campo "public" debe ser booleano').isBoolean(),
     check('creditos', 'El campo "creditos" es obligatorio').notEmpty(),
     validateFields
 ], createVideo);
@@ -336,6 +337,7 @@ router.put('/video/:id', [
     check('titulo', 'El campo "titulo" es obligatorio').notEmpty(),
     check('descripcion', 'El campo "descripcion" es obligatorio').notEmpty(),
     check('public', 'El campo "public" es obligatorio').notEmpty(),
+    check('public', 'El campo "public" debe ser booleano').isBoolean(),
     check('creditos', 'El campo "creditos" es obligatorio').notEmpty(),
     validateFields
 ], updateVideo);
@@ -470,4 +472,4 @@ router.get('/video/top-rate', videosTopRate);
  */
 router.get('/video/:id', getVideo);
 
-export default router;
+export default (app:Express) =>app.use(router);

@@ -26,7 +26,7 @@ export const register = async (req: Request, res: Response) => {
 
         const token = await generarJwt(newUser.id);
 
-        res.json({
+        res.status(201).json({
             ok: true,
             newUser,
             token,

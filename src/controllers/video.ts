@@ -68,7 +68,7 @@ export const createVideo = async (req: tokenRequest, res: Response): Promise<voi
 
         await newVideo.save();
 
-        res.json({ ok: true, message: 'Video creado exitosamente', video: newVideo });
+        res.status(201).json({ ok: true, message: 'Video creado exitosamente', video: newVideo });
     } catch (error) {
         console.error(error);
         res.status(500).json({ ok: false, message: 'Error al crear el video' });
