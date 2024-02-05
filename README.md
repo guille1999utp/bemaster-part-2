@@ -18,3 +18,7 @@ antes de realizar estos pasos y correr el proyecto, por favor tener instalado no
 ## Uso Para correr el test unitario
 
 1. se ejecuta el siguiente comando en la consola en el directorio raiz para empezar los test: `npm run test`
+
+### NOTA:
+
+se debe tener en cuenta que la mayoria de peticiones que requieren de autenticacion requieren en los headers de la peticion un parametro llamado "x-token" en la cual iria el jsonwebtoken de autenticacion, y para crear videos se debe realizar una peticion con un form-data para poder adjuntar un video, de igual forma todo esta explicado en la documentacion de swagger.
