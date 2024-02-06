@@ -1,11 +1,7 @@
 import {Document, Schema,model} from 'mongoose';
+import User from '../interfaces/user';
 
-interface User extends Document {
-    nombre: string;
-    nickname: string;
-    correo: string;
-    password: string;
-}
+
 
 const userSchema = new Schema({
     nombre:  {
